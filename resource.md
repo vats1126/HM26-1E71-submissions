@@ -20,8 +20,8 @@ HOW TO FILL THIS FILE
 
 | Field | Value |
 |---|---|
-| Team ID (from dashboard) | `<HM1-XXXX>` |
-| Team Name | `<team name>` |
+| Team ID (from dashboard) | `HM26-1E71` |
+| Team Name | `Bug Busters` |
 | College(s) | `<college name(s)>` |
 | Team Leader | `<name>` · `<email>` · `<phone>` |
 | Repository | `<https://github.com/org-or-user/repo>` |
