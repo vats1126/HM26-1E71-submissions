@@ -44,3 +44,13 @@ Thumbs.db
 # TypeScript
 *.tsbuildinfo
 next-env.d.ts
+**/node_modules/
+**/.next/
+dist/
+**/dist/
+**/build/
+.env.*.local
+**/.env
+**/.env.local
+**/.env.*.local
+__MACOSX/
