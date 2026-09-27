@@ -2,59 +2,41 @@
 
 [← Back to README](../README.md)
 
-<!-- A reviewer should get this running in under 10 minutes if the live link is down. -->
+> **Team:** Bug Busters (`HM26-1E71`)  
+> **Project:** KEA × AURA Learn  
+> **Problem:** Adaptive Learning & Real-Time Intervention Platform
+
+This repository contains three independent applications:
+
+- **KEA** — structured adaptive-learning MVP
+- **AURA Learn** — interactive adaptive-learning MVP
+- **Launcher** — unified Bug Busters entry point
+
+The launcher does not merge the two MVPs. It opens them as separate applications.
+
+---
 
 ## Prerequisites
 
 | Tool | Version |
 |---|---|
-| `<Node.js / Python / Docker>` | `<20.x / 3.11 / 24+>` |
+| Node.js | 20.x or later |
+| npm | Compatible with installed Node.js version |
+| Git | Current stable version |
+| Browser | Modern Chromium/Chrome, Edge, or equivalent |
 
-## 1. Clone
+No Python, Docker, or separate FastAPI service is required for the current MVP architecture.
 
-```bash
-git clone <repo-url>
-cd <repo>
-```
+---
 
-## 2. Environment Variables
+## Repository Structure
 
-```bash
-cp .env.example .env
-```
-
-| Variable | Required | Example | Purpose |
-|---|---|---|---|
-| `DATABASE_URL` | Yes | `<...>` | `<...>` |
-| `<API_KEY>` | `<No>` | `<...>` | `<...>` |
-
-> Never commit real secrets. Commit only `.env.example`.
-
-## 3. Install & Seed Demo Data
-
-```bash
-<install command>
-<migration command>
-<seed command>          # loads <N> sample complaints across <N> wards
-```
-
-## 4. Run
-
-```bash
-<run command>
-```
-
-Open `http://localhost:<port>`. Test accounts are listed in [resource.md](../resource.md#5-live-mvp).
-
-## Testing Offline Mode
-
-1. `<Open the app and log in>`
-2. `<Chrome DevTools → Network → Offline, or phone airplane mode>`
-3. `<File a complaint → it shows "queued">`
-4. `<Go back online → it syncs and shows "submitted">`
-
-## Troubleshooting
-
-| Problem | Fix |
-|---|---|
-| `<Port already in use>` | `<...>` |
+```text
+D:\Hackathon\
+├── Hack Mysuru 1.0\      # KEA
+├── AURA-Learn-main\      # AURA Learn
+├── launcher\             # Bug Busters launcher
+├── start-kea.bat
+├── start-aura.bat
+├── start-launcher.bat
+└── .gitignore
