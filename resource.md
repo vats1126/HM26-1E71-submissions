@@ -1,13 +1,11 @@
-Yes. I’ll keep the **HackMysuru template structure**, fill in the details we already have, use the **AURA Learn / Problem 01** information, and set the submitted time to **27-09-2026, 09:00 AM IST**.
-
-For fields where you have not given me verified information (especially individual primary roles and final SHA-256 values), I won't invent them.
-
-````markdown
 # HackMysuru 1.0 — Phase 1 Submission Index
 
-> **This is the landing file for your submission.** Reviewers open this file first.
-> Every evaluation artifact is uploaded to **Google Drive** and linked below.
-> Freeze: **20 September 2026, 23:59 IST.** Anything not linked here before the freeze does not exist for judging.
+> **Team:** Bug Busters  
+> **Team ID:** `HM26-1E71`  
+> **Problem 01:** Adaptive Learning & Real-Time Intervention Platform  
+> **Repository:** `https://github.com/vats1126/HM26-1E71-submissions.git`
+>
+> This file is the landing page for the submission. It connects the repository documentation, submission artifacts, and the runnable MVPs.
 
 ---
 
@@ -15,244 +13,185 @@ For fields where you have not given me verified information (especially individu
 
 | Field | Value |
 |---|---|
-| Team ID (from dashboard) | `HM26-1E71` |
+| Team ID | `HM26-1E71` |
 | Team Name | `Bug Busters` |
-| College(s) | `Maharaja Institute of Technology Mysore` |
-| Team Leader | `Varun P` · `varunrao246@gmail.com` · `9108365820` |
-| Repository | `https://github.com/vats1126/HM26-1E71-submission.git` |
+| College | `Maharaja Institute of Technology Mysore` |
+| Team Leader | `Varun P` |
+| Repository | `https://github.com/vats1126/HM26-1E71-submissions.git` |
 
 | # | Member | Program & Year | GitHub Handle | Primary Role |
 |---|---|---|---|---|
-| 1 | `Varun P` (Lead) | `B.E. CSE, 3rd Year` | `@varunrao246` | `Team Lead / Development` |
-| 2 | `Vivek Urs G A` | `B.E. CSE, 3rd Year` | `@vats1126` | `Development` |
-| 3 | `Syed Naheed Ahmed` | `B.E. CSE, 3rd Year` | `@n4heed` | `Development` |
-| 4 | `Vignesh Kumar M` | `B.E. CSE, 3rd Year` | `@VigneshKumar2709` | `Development` |
+| 1 | `Varun P` | B.E. CSE | `@varunrao246` | Team Lead / Development |
+| 2 | `Vivek Urs G A` | B.E. CSE | `@vats1126` | Development |
+| 3 | `Syed Naheed Ahmed` | B.E. CSE | `@n4heed` | Development |
+| 4 | `Vignesh Kumar M` | B.E. CSE | `@VigneshKumar2709` | Development |
 
 ---
 
-## 2. What We Built
+## 2. Problem & Solution
 
-**Sub-problem:** `Own: Adaptive Learning & Real-Time Intervention`
+**Problem:** `Adaptive Learning & Real-Time Intervention Platform`
 
-**In one sentence:**
+Bug Busters built two independent MVPs that demonstrate the same core adaptive-learning architecture from different product directions:
 
-> **AURA Learn is an adaptive learning platform that continuously uses prerequisite mastery, learning performance, student interests and struggle signals to personalize the learning path, adapt educational content and difficulty, and bring the right human facilitator intervention at the right time.**
+- **KEA** — a structured, standardized adaptive learning experience.
+- **AURA Learn** — a visual, interactive learning and intervention experience.
+- **Launcher** — a unified gateway that opens either MVP without merging their codebases.
 
-### Core Learning Loop
+### Core learning loop
 
 ```text
-Student Profile
-      ↓
-Prerequisite Analysis
-      ↓
-Mastery-Based Learning Path
-      ↓
-Adaptive Content & Difficulty
-      ↓
-Practice / Virtual Lab
-      ↓
+Learner
+  ↓
+Topic / Interest / Profile
+  ↓
+Prerequisite + Mastery Analysis
+  ↓
+Personalized Learning Path
+  ↓
+Adaptive Learning / Practice / Lab
+  ↓
+Evidence Collection
+  ↓
 Struggle Detection
-      ↓
-AI Recommendation
-      ↓
-Facilitator Intervention
-      ↓
+  ↓
+AI Assistance / Recommendation
+  ↓
+Human Facilitator Intervention
+  ↓
 Updated Mastery
-      ↺
-````
+  ↺
+```
 
-AURA Learn addresses the problem that students learn at different speeds and often have different prerequisite gaps, while traditional learning systems commonly provide the same content and pace to everyone.
+The system is intentionally designed so that AI can generate, explain, contextualize, and recommend, while deterministic application logic remains authoritative over academic state and progression.
 
 ---
 
 ## 3. Repository Documents
 
-| Document                                       | What it covers                                                                                        |
-| ---------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| [README.md](./README.md)                       | Problem statement, users, solution, architecture, learning flow, adaptive system and project overview |
-| [ai.md](./ai.md)                               | AI tools used during development and AI/ML capabilities used inside the product                       |
-| [docs/architecture.md](./docs/architecture.md) | System architecture, components, data flow, data model, APIs and technology stack                     |
-| [docs/constraints.md](./docs/constraints.md)   | Approach to the major technical and operational constraints                                           |
-| [docs/setup.md](./docs/setup.md)               | Local installation, configuration, seed data and testing instructions                                 |
-| [docs/limitations.md](./docs/limitations.md)   | Known limitations, edge cases and future improvements                                                 |
-| [resource-templates/](./resource-templates/)   | Templates and guides for the video, decision log and presentation                                     |
+| Document | Purpose |
+|---|---|
+| [README.md](./README.md) | Overall problem statement, solution overview, users, architecture, product flow, and demo guidance |
+| [ai.md](./ai.md) | AI tools used during development, runtime AI architecture, safeguards, fallback behavior, and disclosure |
+| [docs/architecture.md](./docs/architecture.md) | System architecture, three-app runtime layout, data flow, APIs, AI boundary, and technology stack |
+| [docs/constraints.md](./docs/constraints.md) | Major learning, technical, and operational constraints and how the system addresses them |
+| [docs/setup.md](./docs/setup.md) | Installation, environment configuration, local startup, testing, and troubleshooting |
+| [docs/limitations.md](./docs/limitations.md) | Known limitations, verification constraints, scale considerations, edge cases, and roadmap |
+| [resource.md](./resource.md) | Submission index and reviewer entry point |
 
 ---
 
-## 4. Submission Artifacts (Google Drive)
+## 4. Application Structure
 
-| # | Artifact                                                                              | Google Drive Link                                                                    | File Name                    | SHA-256 (first 16 chars) |
-| - | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ | ---------------------------- | ------------------------ |
-| 1 | [Pitch + Code Walkthrough Video](./resource-templates/video-guide.md) (≤ 10 min, MP4) | `https://drive.google.com/file/d/1HumxC8fk8K-4Qp_N2Bmoku-8l4hBD0NA/view?usp=sharing` | `HM26-1E71_video.mp4`        | `6e9f2d3caa7e5826`       |
-| 2 | [Decision Log](./resource-templates/decision-log-template.md) (1 page, PDF)           | `https://drive.google.com/file/d/1MDi1ZIPhkfjqAvhEbPzy5XwSs5FVO9l4/view?usp=drive_link` | `HM26-1E71_decision-log.pdf` | `0d66b58f6b79075e`       |
-| 3 | [Presentation](./resource-templates/presentation-template.md) (≤ 10 slides, PDF)      | `https://docs.google.com/presentation/d/1aRA1lhd1HYL8aMpBU9cYJSX3kfYV3API/edit?usp=sharing&ouid=103593359005141101155&rtpof=true&sd=true` | `HM26-1E71_presentation.pdf` | `dc9e4072f3ca79ab`       |
-
----
-
-## Video Chapters
-
-| Timestamp | Section                                                    |
-| --------- | ---------------------------------------------------------- |
-| `00:00`   | Part 1: Problem & target users                             |
-| `00:40`   | Part 1: AURA Learn overview and student experience         |
-| `01:50`   | Part 1: Personalized learning path and prerequisite gating |
-| `02:30`   | Part 1: Adaptive difficulty and AI contextual re-theming   |
-| `03:00`   | Part 2: Architecture overview                              |
-| `04:30`   | Part 2: Data model, mastery and APIs                       |
-| `05:30`   | Part 2: Struggle detection and facilitator intervention    |
-| `07:30`   | Part 2: Key implementation decisions & trade-offs          |
-| `08:30`   | Part 2: Scaling, limitations and fallback behavior         |
-| `09:15`   | Part 2: AI usage (see [ai.md](./ai.md))                    |
-
----
-
-## 5. Live MVP
-
-| Field                    | Value                                                                                                                                                                  |
-| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |                                                                                                              |
-| Platform                 | `Web Application / PWA`                                                                                                                                                |                                                                                                                                                           
-| Backend / Database       | `Supabase`                                                                                                                                                             |
-| Test login               | `Use the application's available demo/test authentication flow`                                                                                                        |
-| Sample data loaded?      | `Yes — synthetic/demo data for demonstrating the adaptive learning workflow`                                                                                           |
-| How to test offline mode | `Open the application, disconnect the network or enable airplane mode, and verify the supported offline learning workflow. Full steps are available in docs/setup.md.` |
-| If the live link is down | Follow [docs/setup.md](./docs/setup.md) to run the application locally                                                                                                 |
-
----
-
-## 6. Quick Reviewer Path (≤ 3 minutes)
-
-The following path demonstrates the core value of AURA Learn:
-
-1. **Open the live URL** and enter the student-facing application.
-2. **Enter the student learning flow** and view the personalized dashboard and learning path.
-3. **Open a topic such as Ohm's Law** and observe prerequisite/mastery-based progression.
-4. **Attempt questions** and observe adaptive difficulty and personalized contextual content.
-5. **Trigger/view the struggle and intervention flow**, then open the facilitator interface to see the recommended intervention.
-
-### Key Features to Observe
-
-* Student onboarding
-* Interest-based personalization
-* Personalized student dashboard
-* Prerequisite knowledge graph
-* Mastery-based gating
-* Adaptive difficulty
-* AI contextual re-theming
-* Virtual lab integration
-* Struggle detection
-* Facilitator intervention
-* Student progress tracking
-
----
-
-## 7. Core Problem Statement Alignment
-
-### 7.1 Prerequisite Knowledge Graph & Mastery Gating
-
-AURA Learn represents concepts as a prerequisite graph rather than a flat list of lessons.
-
-Example:
+The submission contains three independently runnable applications.
 
 ```text
-Electric Current
-       ↓
-Voltage
-       ↓
-Resistance
-       ↓
-Ohm's Law
-       ↓
-Circuits
+HM26-1E71-submissions/
+├── Hack Mysuru 1.0/       # KEA
+├── AURA-Learn-main/       # AURA Learn
+├── launcher/              # Unified gateway
+├── start-kea.bat
+├── start-aura.bat
+├── start-launcher.bat
+└── resource.md
 ```
 
-Students must demonstrate sufficient prerequisite mastery before dependent concepts are unlocked.
+### Local runtime
+
+| Application | Purpose | Default Port |
+|---|---|---:|
+| Launcher | Unified entry page | `3000` |
+| KEA | Structured adaptive learning MVP | `3001` |
+| AURA Learn | Interactive adaptive learning + intervention MVP | `3002` |
+
+Start the launcher first, then run either or both MVPs as needed.
 
 ---
 
-### 7.2 AI-Driven Dynamic Context Re-Theming
+## 5. MVP 1 — KEA
 
-Students can select interests such as:
+KEA is the structured/standardized adaptive learning implementation.
 
-* Space
-* Sports
-* Gaming
-* Animals
-* Technology
-* Environment
-* Art
+### Demonstration domain
 
-AURA uses runtime AI to adapt educational context around the student's interests.
-
-The AI can change:
-
-* Story
-* Context
-* Characters
-* Examples
-* Vocabulary
-
-The AI must preserve:
-
-* Numerical values
-* Variables
-* Formula
-* Expected answer
-* Learning objective
-* Topic
-* Difficulty
-
----
-
-### 7.3 Human-in-the-Loop Real-Time Intervention
-
-AURA detects learner struggle and provides an actionable recommendation to the facilitator.
+**Organic Chemistry**
 
 ```text
-AI / System detects struggle
-          ↓
-Reason is identified
-          ↓
-Recommendation generated
-          ↓
-Facilitator reviews
-          ↓
-Facilitator decides action
+Carbon Fundamentals
+        ↓
+Hydrocarbon Foundations
+        ↓
+Functional Groups
+        ↓
+Structure & Isomerism
+        ↓
+Reactions & Practical Application
 ```
 
-The system is designed to assist teachers rather than replace them.
+### Core capabilities
+
+- AI-assisted topic understanding and planning
+- Prerequisite-aware learning paths
+- Dynamic topic graph
+- Diagnostic assessment
+- Visual-first learning content
+- AI-generated practice and mock tests
+- Deterministic mastery calculation
+- Adaptive remediation
+- Interview/oral assessment flow
+- Provider health and fallback behavior
+
+### Runtime AI
+
+KEA currently uses a provider cascade:
+
+```text
+Groq
+  ↓
+NVIDIA NIM
+  ↓
+Gemini adapter
+  ↓
+Deterministic fallback
+```
+
+Groq and NVIDIA are the currently verified working providers in the submitted implementation. Gemini is retained as an optional provider path.
 
 ---
 
-### 7.4 Architectural Coherence
+## 6. MVP 2 — AURA Learn
 
-The platform connects all major components into one continuous learning loop:
+AURA Learn is the more interactive and visual implementation.
+
+### Example learning journey
 
 ```text
-Student Profile
-      ↓
-Curriculum Graph
-      ↓
-Mastery Engine
-      ↓
-Adaptive Learning
-      ↓
-Practice / Virtual Lab
-      ↓
+Student Login
+  ↓
+Select Interest
+  ↓
+Personalized Path
+  ↓
+Prerequisite Gap Identified
+  ↓
+Prerequisite Practice
+  ↓
+Adaptive Difficulty
+  ↓
+AI Contextual Re-theming
+  ↓
+Virtual Lab
+  ↓
 Struggle Detection
-      ↓
+  ↓
 Facilitator Intervention
-      ↓
-Updated Mastery
-      ↺
+  ↓
+Mastery Improvement
+  ↓
+Dependent Concept Unlocks
 ```
 
----
-
-## 8. Demonstration Topics
-
-The MVP demonstrates the adaptive learning concept using representative educational topics.
-
-### Physics — Ohm's Law
+### Example concept graph
 
 ```text
 Electric Current
@@ -266,250 +205,282 @@ Ohm's Law
 Circuits
 ```
 
-Demonstrates:
+### Key capabilities
 
-* Prerequisite gating
-* Adaptive questions
-* Difficulty adaptation
-* AI re-theming
-* Virtual lab
-* Struggle detection
-* Facilitator intervention
+- Student onboarding and profile-based personalization
+- Interest-driven contextual examples
+- Prerequisite knowledge graph
+- Mastery-based gating
+- Adaptive difficulty
+- Practice and virtual labs
+- Struggle-signal detection
+- Facilitator intervention queue
+- AI tutoring/contextual re-theming
+- Persistent learner state through the configured database layer
 
-### Chemistry — Acid–Base Titration
+### Academic guardrail for AI re-theming
 
-```text
-Acids & Bases
-      ↓
-pH
-      ↓
-Indicators
-      ↓
-Titration
-```
+AI may adapt:
 
-Demonstrates:
+- story/context
+- characters
+- examples
+- vocabulary
+- presentation framing
 
-* Concept learning
-* Virtual laboratory experience
-* Practice
-* Mastery progression
+The following remain protected:
 
-### Biology — Human Senses
-
-```text
-Sense Organs
-      ↓
-Stimulus
-      ↓
-Sensory Receptors
-      ↓
-Brain Response
-```
-
-Demonstrates student-friendly contextual learning.
+- numerical values
+- variables
+- formulas
+- expected answer
+- learning objective
+- topic
+- difficulty
 
 ---
 
-## 9. Primary Demonstration Scenario
+## 7. Unified Launcher
 
-### Student: Aarav
+The launcher is intentionally lightweight.
+
+It:
+
+1. identifies the Bug Busters submission,
+2. presents KEA and AURA Learn as separate products,
+3. opens each application independently,
+4. avoids coupling the two MVP codebases.
+
+Default destinations:
 
 ```text
-Aarav logs in
-      ↓
-Selects Space as an interest
-      ↓
-AURA creates a personalized learning path
-      ↓
-Resistance is identified as a weak prerequisite
-      ↓
-Ohm's Law remains locked
-      ↓
-Aarav practices Resistance
-      ↓
-AURA re-themes content around Space
-      ↓
-Aarav enters the Virtual Lab
-      ↓
-Aarav makes repeated mistakes
-      ↓
-Struggle Score increases
-      ↓
-AURA recommends intervention
-      ↓
-Facilitator sees Aarav in intervention queue
-      ↓
-Facilitator assigns prerequisite refresher
-      ↓
-Aarav completes the activity
-      ↓
-Mastery increases
-      ↓
-Ohm's Law unlocks
+KEA  → http://localhost:3001
+AURA → http://localhost:3002
 ```
+
+The AURA destination can be configured through:
+
+```text
+NEXT_PUBLIC_AURA_URL
+```
+
+---
+
+## 8. Reviewer Paths
+
+### KEA — structured adaptive flow
+
+```text
+Launcher
+  ↓
+KEA
+  ↓
+Select / load topic
+  ↓
+Topic understanding + prerequisite graph
+  ↓
+Diagnostic
+  ↓
+Personalized learning path
+  ↓
+Visual learning
+  ↓
+Practice / assessment
+  ↓
+Mastery update
+  ↓
+Remediation or next concept
+```
+
+### AURA Learn — intervention flow
+
+```text
+Launcher
+  ↓
+AURA Learn
+  ↓
+Student onboarding
+  ↓
+Choose an interest
+  ↓
+Open the learning path
+  ↓
+Inspect prerequisite/mastery state
+  ↓
+Practice a weak concept
+  ↓
+Observe contextual re-theming
+  ↓
+Use the virtual lab
+  ↓
+Trigger struggle signals
+  ↓
+Open facilitator intervention view
+```
+
+---
+
+## 9. Core Technical Design
+
+### Deterministic responsibilities
+
+Application logic remains authoritative for:
+
+- prerequisite relationships
+- mastery thresholds
+- progression/unlocking
+- difficulty state transitions
+- intervention state
+- authentication/authorization
+- database integrity
+- assessment answer-key protection
+
+### AI responsibilities
+
+AI is used for tasks such as:
+
+- topic understanding
+- explanation generation
+- contextual examples
+- personalized re-theming
+- adaptive educational content
+- recommendations
+- tutor-style assistance
+
+This separation reduces the risk of an LLM directly changing authoritative learner state.
 
 ---
 
 ## 10. Technology Stack
 
-| Layer        | Technology                          |
-| ------------ | ----------------------------------- |
-| Frontend     | `Next.js`                           |
-| UI           | `React + TypeScript + Tailwind CSS` |
-| Backend      | `Next.js API Routes`                |
-| Database     | `Supabase PostgreSQL`               |
-| Runtime AI   | `OpenRouter / configured LLM API`   |
-| Deployment   | `Vercel`                            |
-| Virtual Labs | `HTML / CSS / JavaScript`           |
+| Layer | KEA | AURA Learn | Launcher |
+|---|---|---|---|
+| Frontend | Next.js + React + TypeScript | Next.js + React + TypeScript | Next.js + React + TypeScript |
+| Styling | Tailwind CSS + shadcn/ui | Tailwind CSS | Tailwind CSS |
+| Backend | Next.js Route Handlers | Next.js API routes | Minimal Next.js app |
+| Data | App-managed learning data / runtime state | Supabase PostgreSQL + application state | Configuration only |
+| Runtime AI | Groq / NVIDIA NIM / Gemini adapter / fallback | Configured LLM AI layer | None |
+| Labs / Visuals | Interactive learning UI | Virtual labs / interactive UI | None |
 
 ---
 
-## 11. Key Technical Components
+## 11. Data Sources
 
-### Mastery Engine
+The submitted MVPs use:
 
-AURA tracks learner mastery using multiple learning signals.
+- curated curriculum/topic definitions
+- prerequisite and concept graphs
+- structured lesson/question/lab content
+- runtime learner performance evidence
+- mastery and struggle signals
+- configured persistent learner state in AURA
+- deterministic assessment and progression rules
+- runtime AI-generated educational assistance where enabled
 
-The proposed model considers:
+No external dataset is required for the core demonstration flow.
+
+---
+
+## 12. AI Disclosure
+
+See [ai.md](./ai.md) for the complete disclosure.
+
+The development workflow used AI-assisted tools including ChatGPT, Claude Code, Antigravity IDE, OpenRouter, and Ollama.
+
+The submitted product architecture does **not** delegate authoritative academic progression to an LLM.
+
+---
+
+## 13. Resilience / Degraded Mode
+
+The system distinguishes between core learning logic and external AI services.
 
 ```text
-Quiz Accuracy
-Recent Performance
-Prerequisite Mastery
-Retention
-Virtual Lab Performance
-```
-
-Mastery states:
-
-```text
-0–39    Not Ready
-40–59   Learning
-60–79   Proficient
-80–100  Mastered
-```
-
-### Adaptive Difficulty
-
-```text
-High recent performance
+Core application logic
         ↓
-Increase difficulty
+Can continue with predefined / deterministic content
 ```
 
 ```text
-Moderate performance
+Optional personalization
         ↓
-Maintain difficulty
-```
-
-```text
-Low performance
+External LLM provider
         ↓
-Reduce difficulty
-+
-Check prerequisites
+Generated contextual content
 ```
 
-### Struggle Detection
-
-The system considers:
-
-* Repeated incorrect answers
-* Low accuracy
-* Excessive time
-* Hint dependency
-* Prerequisite weakness
-* Repeated topic difficulty
-
-Risk levels:
-
-```text
-0–39    Normal
-40–59   Watch
-60–79   Intervention Recommended
-80+     Immediate Facilitator Attention
-```
+When an external AI provider is unavailable, supported flows can fall back to predefined or deterministic educational behavior rather than making the learner dependent on a live model for every action.
 
 ---
 
-## 12. AI Architecture
+## 14. Submission Artifacts
 
-Runtime AI is intentionally separated from deterministic learning logic.
+Update the table below with the final Google Drive URLs and verified hashes before submission freeze.
 
-```text
-              AURA LEARN
-                   │
-        ┌──────────┴──────────┐
-        │                     │
- Deterministic Logic       Runtime AI
-        │                     │
-        ├── Prerequisites     ├── Context
-        ├── Mastery           ├── Examples
-        ├── Progression       └── Re-theming
-        ├── Difficulty
-        └── Intervention
-```
+| # | Artifact | Google Drive Link | File Name | SHA-256 |
+|---:|---|---|---|---|
+| 1 | Pitch + Code Walkthrough Video | `PASTE_FINAL_DRIVE_LINK` | `HM26-1E71_video.mp4` | `VERIFY_BEFORE_SUBMISSION` |
+| 2 | Decision Log | `PASTE_FINAL_DRIVE_LINK` | `HM26-1E71_decision-log.pdf` | `VERIFY_BEFORE_SUBMISSION` |
+| 3 | Presentation | `PASTE_FINAL_DRIVE_LINK` | `HM26-1E71_presentation.pdf` | `VERIFY_BEFORE_SUBMISSION` |
 
-The LLM does **not** control:
-
-* Prerequisite unlocking
-* Mastery thresholds
-* Authentication
-* Authorization
-* Core progression
-* Database integrity
-* Final facilitator decisions
-
-See [ai.md](./ai.md) for the complete AI usage disclosure.
+> Do not replace placeholders with unverified values.
 
 ---
 
-## 13. Offline / Resilience Approach
+## 15. Video Chapters
 
-AURA is designed so that the core learning experience is not completely dependent on external AI availability.
+Use the final recorded timestamps once the video is locked.
 
-Where supported:
-
-```text
-Local / Cached Educational Content
-              ↓
-       Core Learning Flow
-```
-
-Runtime AI:
-
-```text
-Student Request
-      ↓
-External LLM API
-      ↓
-Personalized Content
-```
-
-If the external AI service is unavailable, the application can fall back to predefined educational content instead of blocking the learner.
+| Timestamp | Section |
+|---|---|
+| `00:00` | Problem + target users |
+| `00:40` | Product overview |
+| `01:30` | KEA demonstration |
+| `03:30` | AURA Learn demonstration |
+| `05:30` | Architecture + learning loop |
+| `06:30` | Adaptive logic + struggle detection |
+| `07:30` | Human-in-the-loop intervention |
+| `08:15` | AI architecture + safeguards |
+| `09:00` | Limitations + fallback + closing |
 
 ---
 
-## 14. Declaration
+## 16. Declaration Checklist
 
-* [ ] All Drive links open in an incognito/private window with **Viewer** access and do not require access requests.
-* [ ] The video is one continuous recording, ≤ 10 minutes, with Part 1 followed by Part 2.
-* [ ] The decision log is one page and written by the team in our own words.
-* [ ] All AI tools used during development and all AI/ML used inside the product are disclosed in [`ai.md`](./ai.md).
-* [ ] No code specific to this challenge was written before **18 September 2026, 00:00 IST**.
-* [ ] We will not modify or replace any linked submission artifact after **20 September 2026, 23:59 IST**.
-* [ ] Final Google Drive links, filenames and SHA-256 values have been verified.
-* [ ] The final application and documentation correspond to the submitted Problem 01 solution.
+- [ ] Every Google Drive link opens with Viewer access in an incognito/private window.
+- [ ] Final filenames match the values listed above.
+- [ ] SHA-256 values have been calculated from the exact submitted files.
+- [ ] The AI disclosure in [ai.md](./ai.md) matches actual development-time and runtime AI usage.
+- [ ] No `.env`, `.env.local`, secrets, API keys, or generated dependency folders are committed.
+- [ ] The final repository corresponds to `HM26-1E71`.
+- [ ] The final presentation and decision log match the submitted implementation.
+- [ ] The final video is within the hackathon's permitted duration.
+- [ ] All final submission links and hashes have been checked before the submission deadline.
 
 ---
 
-**Submitted by:** `Varun P`
-**Team:** `Bug Busters`
-**Team ID:** `HM26-1E71`
-**College:** `Maharaja Institute of Technology Mysore`
-**Date/Time (IST):** `27-09-2026 09:00 AM`
+## 17. Quick Start
 
+From `D:\Hackathon`:
+
+```powershell
+.\start-launcher.bat
 ```
+
+Then run the required MVPs:
+
+```powershell
+.\start-kea.bat
+.\start-aura.bat
 ```
+
+For manual setup, environment variables, AI configuration, testing, and troubleshooting, see [docs/setup.md](./docs/setup.md).
+
+---
+
+## 18. Team Submission
+
+**Submitted by:** `Bug Busters`  
+**Team ID:** `HM26-1E71`  
+**College:** `Maharaja Institute of Technology Mysore`  
+**Submission Date:** `27-09-2026`
