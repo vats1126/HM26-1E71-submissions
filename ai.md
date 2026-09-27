@@ -1,13 +1,12 @@
-Yes. Based on the AURA Learn PRD/details you've provided and the development workflow you've described, here is a **fully filled `ai.md`** as one copyable file. I have avoided inventing model accuracy numbers or claiming fine-tuning that wasn't established.
-
-````markdown
 # AI Usage Disclosure
 
 [← Back to README](./README.md)
 
-> AI tools are **100% permitted** at HackMysuru 1.0. Disclosing them is **mandatory**.
-> Using AI never costs you points. Not being able to explain code you submitted does.
-> Reviewers check this file against your commit history and the AI segment of your video.
+> **Team:** Bug Busters (`HM26-1E71`)  
+> **Project:** KEA × AURA Learn  
+> **Problem:** Adaptive Learning & Real-Time Intervention Platform
+
+AI was used extensively during development and is also part of both MVPs at runtime. This file distinguishes **development-time AI assistance** from **runtime AI functionality** and documents the deterministic controls that remain authoritative.
 
 ---
 
@@ -16,82 +15,209 @@ Yes. Based on the AURA Learn PRD/details you've provided and the development wor
 | Question | Answer |
 |---|---|
 | Did we use AI tools during development? | **Yes** |
-| Does our product use AI/ML at runtime? | **Yes** |
-| Roughly how much of the code was AI-assisted? | **A substantial portion of the application was AI-assisted during development; the exact percentage was not formally measured. Core product decisions, architecture, adaptive-learning logic, validation rules, database design, and integration decisions were reviewed and controlled by the team.** |
-| Can every team member explain the AI-assisted code? | **Yes** |
-
-AI was used as a development and productivity tool. The team remained responsible for the final architecture, implementation decisions, testing, debugging, integration, and validation.
-
-The runtime AI functionality in AURA Learn is used primarily for **contextual personalization and adaptive educational assistance**, while critical academic logic such as prerequisite relationships, mastery thresholds, progression rules, and intervention scoring remains deterministic and controlled by the application.
+| Does the product use AI/ML at runtime? | **Yes** |
+| Are the two MVPs one AI system? | **No. KEA and AURA Learn remain independent applications.** |
+| Is AI the authority for learning progression? | **No.** Critical progression and learning-state decisions remain controlled by deterministic application logic. |
+| Was every line of code written manually? | **No.** AI-assisted development was used extensively. |
+| Was AI-generated code reviewed and integrated by the team? | **Yes.** The team remained responsible for architecture, integration, debugging, testing, and final implementation. |
 
 ---
 
 # 1. AI Tools Used During Development
 
-| Tool | Model / plan | Used by | What we used it for |
-|---|---|---|---|
-| **ChatGPT** | GPT-based ChatGPT | Team | Product ideation, PRD refinement, architecture planning, debugging, code explanation, API design, database modeling, UI/UX planning, documentation, prompts, and development troubleshooting |
-| **Claude Code** | Claude-based coding agent | Team | Understanding and modifying the existing codebase, implementing features, debugging, refactoring, generating components, improving project structure, and assisting with end-to-end development |
-| **Antigravity IDE** | AI-assisted development environment | Team | Code generation, project navigation, debugging, feature implementation, and development workflow assistance |
-| **OpenRouter** | LLM API gateway | Team | Runtime AI integration and experimentation with LLM-based functionality, including adaptive educational content generation |
-| **Ollama** | Local LLM tooling | Team | Development experimentation, local AI-assisted coding/workflows, and testing alternative AI-assisted development approaches |
+| Tool | Used for |
+|---|---|
+| **ChatGPT** | Product ideation, architecture planning, PRD refinement, debugging, code explanation, implementation planning, documentation, test planning, and prompt design |
+| **Claude Code** | Codebase understanding, feature implementation, refactoring, debugging, component generation, and development assistance |
+| **Antigravity IDE** | Agent-assisted implementation, repository inspection, code generation, debugging, verification, documentation, and multi-step development workflows |
+| **OpenRouter** | LLM API experimentation and runtime AI integration for AURA Learn |
+| **Ollama** | Local LLM experimentation and AI-assisted development workflows |
 
-AI tools were used as assistants rather than as autonomous decision makers.
+AI was treated as a development assistant, not as an autonomous owner of the product.
 
-The team reviewed generated code and integrated it into the application based on the project's requirements.
+The team made the product decisions, selected the architecture, reviewed generated implementations, tested behavior, and modified code before integration.
 
 ---
 
-# 2. Where AI Helped in the Codebase
+# 2. Where AI Helped During Development
 
-| Area / file | Level of AI help | What a human did |
-|---|---|---|
-| **Frontend pages and components** | High | Defined the required screens, user flow, student/facilitator experience, reviewed generated UI, integrated components, and tested the resulting application |
-| **Student Dashboard** | High | Defined the information that should be displayed, learning-pulse requirements, progress indicators, recommendations, and overall UX |
-| **Facilitator Dashboard** | High | Defined the intervention workflow, student-risk information, facilitator actions, and required information hierarchy |
-| **Authentication / role-based flows** | Medium–High | Defined student/facilitator roles and expected navigation and reviewed the authentication implementation |
-| **Curriculum / prerequisite graph** | Medium | Defined the prerequisite-learning model, concept relationships, mastery states, and progression requirements |
-| **Mastery engine** | Medium | Defined the mastery concept, scoring factors, mastery states, and progression behavior |
-| **Adaptive difficulty logic** | Medium | Defined how performance should influence question difficulty and reviewed the implementation |
-| **Struggle detection** | Medium | Defined the behavioral signals, scoring approach, risk levels, and intervention threshold |
-| **AI contextual re-theming** | High | Defined what the AI is allowed to change and, more importantly, what it must preserve such as numerical values, formulas, answers, learning objectives, and difficulty |
-| **AI guardrails / validation** | Medium–High | Defined the academic invariants and fallback behavior when generated content is invalid or unavailable |
-| **Supabase integration** | Medium | Defined the required entities, relationships, student/mastery/intervention data, and reviewed database integration |
-| **API routes** | Medium | Defined the required API behavior, inputs, outputs, and integration requirements |
-| **Virtual Lab integration** | Medium | Defined how existing HTML labs fit into the learning journey and how lab activity contributes to the learning flow |
-| **Documentation** | High | Used AI to structure and refine documentation, while the team supplied the actual project information and reviewed the final content |
-| **Core learning architecture** | Low–Medium | The team defined the overall architecture and how prerequisite learning, mastery, adaptive content, struggle detection, and facilitator intervention work together |
+AI assistance was used across substantial parts of both MVPs, including:
 
-### Important distinction
+### Product / Architecture
+- Problem interpretation
+- Product-flow design
+- Architecture exploration
+- Trade-off analysis
+- PRD and documentation drafting
+- Feature decomposition
+- API/interface planning
 
-AI-assisted implementation does **not** mean the AI independently designed or owned the product.
+### Frontend
+- UI scaffolding
+- React/Next.js component implementation
+- Responsive layout work
+- Interaction states
+- Dashboard and learning-workspace development
+- Visual polish and accessibility improvements
+
+### Learning Systems
+- Prerequisite graph implementation support
+- Mastery-engine implementation support
+- Diagnostic flows
+- Adaptive difficulty logic
+- Struggle detection
+- Intervention workflows
+- Assessment flows
+
+### AI Systems
+- Provider abstraction
+- Prompt construction
+- Structured output schemas
+- AI guardrails
+- Semantic evaluation
+- Runtime content generation
+- AI tutoring
+- Contextual re-theming
+- Interview/oral-assistance flows
+
+### Infrastructure
+- API route implementation
+- Environment configuration
+- Error handling
+- Fallback behavior
+- Security hardening
+- Test generation
+- Build/debug workflows
+
+### Human responsibility
 
 The team determined:
 
-- What problem the product solves
-- How the learning flow works
-- What the prerequisite graph represents
-- How mastery is calculated
-- How difficulty changes
-- What constitutes learner struggle
-- What information a facilitator needs
-- What AI is allowed to modify
-- What AI is not allowed to modify
-- What happens when AI fails
-- How the major components interact
+- What problem to solve
+- What the learner journey should be
+- What evidence should influence adaptation
+- How prerequisites should be represented
+- How mastery should be calculated
+- What AI is allowed to generate
+- What AI must never control
+- What happens when an AI provider fails
+- What the facilitator should see
+- Which MVP should use which interaction style
 
 ---
 
-# 3. AI Inside the Product (Runtime)
+# 3. Runtime AI Architecture
 
-AURA Learn uses AI at runtime as a **personalization layer**, not as the authority for academic progression.
+Bug Busters contains two independent runtime AI implementations.
 
-| Model / API | What it does in our product | Hosted where | Trained / fine-tuned by us? |
-|---|---|---|---|
-| **LLM accessed through OpenRouter** | Generates contextual variations of educational explanations, examples, and questions based on a student's selected interests while preserving the underlying academic objective | Provider API through OpenRouter | **No** |
-| **LLM-based adaptive assistance** | Supports personalized educational content and contextual explanations | Provider API | **No** |
+```text
+                         BUG BUSTERS
+                              │
+              ┌───────────────┴───────────────┐
+              │                               │
+             KEA                        AURA LEARN
+              │                               │
+      AI Orchestration                  Runtime AI
+              │                               │
+     Groq → NVIDIA →                    Tutor / Contextual
+     Gemini → Fallback                  Personalization
+              │                               │
+      Deterministic                    Deterministic
+      Learning Engine                  Learning Engine
+```
 
-## Runtime AI Responsibilities
+The shared design principle is:
+
+```text
+AI generates / interprets
+        ↓
+Deterministic logic validates / governs
+        ↓
+Learner evidence updates state
+        ↓
+Adaptive routing determines next action
+```
+
+---
+
+# 4. KEA — Runtime AI
+
+KEA is the structured, standardized adaptive-learning MVP.
+
+## AI Responsibilities
+
+KEA uses runtime AI for:
+
+- Topic understanding
+- Concept and prerequisite candidate generation
+- Stage-wise learning-plan generation
+- Personalized explanations
+- Worked examples
+- Practice-question generation
+- Hints
+- Stretch challenges
+- Semantic short-answer evaluation
+- Adaptive learning content
+- Oral/interview assistance
+- Contextual re-theming
+- Personalized learning support
+
+## Current provider architecture
+
+KEA uses an AI provider abstraction and orchestration layer.
+
+```text
+                 KEA AI REQUEST
+                       │
+                       ↓
+                    GROQ
+                       │
+                 failure / unavailable
+                       ↓
+                 NVIDIA NIM
+                       │
+                 failure / unavailable
+                       ↓
+              GEMINI ADAPTER
+                       │
+                 failure / unavailable
+                       ↓
+            DETERMINISTIC FALLBACK
+```
+
+Current known provider state:
+
+| Provider | Role | Notes |
+|---|---|---|
+| **Groq** | Primary | Working and used for live AI generation |
+| **NVIDIA NIM** | Secondary | Working backup provider |
+| **Gemini** | Tertiary/optional | Adapter remains available; current configured credential may require replacement |
+| **Deterministic fallback** | Final fallback | Used where supported to preserve a truthful, reproducible demo experience |
+
+The UI distinguishes live AI activity from deterministic/demo fallback behavior.
+
+## KEA AI files
+
+```text
+Hack Mysuru 1.0/src/lib/ai/ai-orchestrator.ts
+Hack Mysuru 1.0/src/lib/ai/ai-provider.ts
+Hack Mysuru 1.0/src/lib/ai/openai-compatible-provider.ts
+Hack Mysuru 1.0/src/lib/ai/gemini-provider.ts
+Hack Mysuru 1.0/src/lib/ai/fallback-provider.ts
+Hack Mysuru 1.0/src/lib/ai/provider-health.ts
+Hack Mysuru 1.0/src/lib/ai/schemas.ts
+Hack Mysuru 1.0/src/lib/ai/topic-plan-validator.ts
+```
+
+---
+
+# 5. AURA Learn — Runtime AI
+
+AURA Learn is the more interactive and visually engaging adaptive-learning MVP.
+
+Its runtime AI is primarily a **personalization and contextual assistance layer**.
+
+## AI Responsibilities
 
 The runtime AI can assist with:
 
@@ -99,469 +225,322 @@ The runtime AI can assist with:
 - Personalized examples
 - Interest-based explanations
 - Educational narrative generation
+- AI tutoring
 - Adaptive content presentation
+- Context-aware educational assistance
 
-For example, if a student selects **Space** as an interest, an Ohm's Law problem may be presented using a spacecraft scenario while retaining the same mathematical problem.
+For example, a mathematical or scientific problem can be presented in a learner-selected context such as Space while preserving the underlying educational objective.
 
-### Example
+## AURA Learn AI architecture
 
-Original:
+```text
+Learner / Curriculum Data
+          ↓
+Deterministic Learning State
+          ↓
+Runtime AI request
+          ↓
+LLM / AI provider
+          ↓
+Generated contextual content
+          ↓
+Guardrails / validation
+          ↓
+Student learning experience
+```
 
-> A circuit has a 12V source and 6Ω resistance. Calculate the current.
+AURA Learn keeps authoritative learning content and progression logic separate from generated context.
 
-Personalized context:
+## AURA Learn AI files
 
-> Imagine a spacecraft instrument powered by a 12V supply with 6Ω resistance. Calculate the current.
-
-The purpose is to make the learning context more engaging without changing the underlying learning objective.
+```text
+AURA-Learn-main/lib/ai/
+AURA-Learn-main/lib/ai/llm.ts
+AURA-Learn-main/lib/ai/retheme.ts
+AURA-Learn-main/lib/ai/resilience.ts
+AURA-Learn-main/lib/ai/guardrails.ts
+AURA-Learn-main/lib/ai/tutor.ts
+AURA-Learn-main/lib/ai/tutorStrategy.ts
+AURA-Learn-main/lib/ai/scenes.ts
+```
 
 ---
 
-## What Runtime AI Does NOT Control
+# 6. What AI Does NOT Control
 
-The LLM is not the authority for:
+This is the most important architectural boundary in both MVPs.
 
-- Prerequisite relationships
+AI does **not** directly control:
+
+- Prerequisite authority
 - Topic unlocking
 - Mastery thresholds
-- Student progression
-- Core scoring rules
-- Difficulty-state transitions
-- Intervention state management
+- Core progression rules
+- Authoritative objective answers
 - Database integrity
 - Authentication
 - Authorization
+- Critical session integrity
+- Final facilitator decisions
 
-These are controlled by deterministic application logic.
+KEA additionally keeps:
 
-This separation is intentional.
+- Knowledge-graph DAG validity
+- Chemistry invariants
+- Objective scoring
+- Assessment answer authority
+- Client mastery-tampering protection
 
-```text
-              AURA LEARN
-                   │
-        ┌──────────┴──────────┐
-        │                     │
- Deterministic Logic       Runtime AI
-        │                     │
-        │                     ├── Context
-        │                     ├── Examples
-        │                     └── Re-theming
-        │
-        ├── Prerequisites
-        ├── Mastery
-        ├── Progression
-        ├── Difficulty
-        └── Intervention Rules
-````
+outside autonomous LLM control.
 
----
+AURA Learn similarly keeps:
 
-## Accuracy We Measured
+- Curriculum state
+- Prerequisite state
+- Mastery logic
+- Adaptive-state logic
+- Intervention decision authority
 
-**Not formally measured as a statistical ML accuracy benchmark.**
-
-AURA's runtime AI is being used primarily for generative contextual personalization rather than a supervised classification model with a conventional accuracy metric.
-
-Instead, the team validates generated content against application-level requirements and academic invariants.
-
----
-
-## What Happens When the Model Is Wrong?
-
-AURA follows a validation-and-fallback approach.
-
-Generated content should preserve:
-
-* Numerical values
-* Variables
-* Formula
-* Expected answer
-* Learning objective
-* Topic
-* Difficulty
-* Required reasoning
-
-If generated content fails validation or the external AI service is unavailable:
-
-```text
-AI Request
-    ↓
-Generated Content
-    ↓
-Validation
-    ↓
- ┌───────────────┐
- │ Valid?        │
- └───────┬───────┘
-         │
-    ┌────┴────┐
-    │         │
-   YES        NO
-    │         │
-    ↓         ↓
-Show       Fallback
-Content    to original
-           content
-```
-
-The objective is to ensure that AI failure does not prevent the learner from continuing with deterministic educational content.
-
----
-
-## Does It Work Offline?
-
-The core learning experience is designed to remain usable with locally available application data and content where supported.
-
-However, **external LLM-based generation requires network connectivity**.
-
-Therefore:
-
-```text
-Core educational content
-        ↓
-Can remain available
-where locally cached/stored
-
-AI generation
-        ↓
-Requires network/API access
-```
-
-If the AI service cannot be reached, the application can fall back to the original educational content rather than blocking the learning flow.
-
----
-
-## Student Data Sent to Third Parties
-
-Only information required for the relevant AI-assisted functionality should be sent to the configured LLM provider.
-
-The system should avoid sending unnecessary sensitive student information.
-
-For contextual re-theming, the relevant information can be limited to structured educational context such as:
-
-* Topic
-* Question
-* Learning objective
-* Difficulty
-* Selected interest
-* Required answer/invariants
-
-The system does not need to send a student's complete personal profile simply to generate a themed explanation.
-
----
-
-## Cost at City / Institution Scale
-
-**Not formally benchmarked yet.**
-
-Runtime AI cost depends on:
-
-* Number of AI requests
-* Model selected through OpenRouter
-* Prompt size
-* Response size
-* Number of active students
-* Frequency of content regeneration
-
-A production deployment would reduce cost through:
-
-* Caching generated content
-* Reusing validated content
-* Limiting unnecessary AI calls
-* Using smaller models for simpler tasks
-* Keeping deterministic educational content available
-* Calling AI only when personalization provides value
-
----
-
-# 4. Key Prompts
-
-The following are representative prompts that influenced the product's architecture and implementation.
-
-## Prompt 1 — Product Architecture
-
-> "Design an adaptive learning platform where prerequisite mastery, personalized content, struggle detection and teacher intervention work together as one continuous learning loop."
-
-### What we kept
-
-* Prerequisite graph
-* Mastery tracking
-* Adaptive learning
-* Struggle detection
-* Facilitator intervention
-* Continuous feedback loop
-
-### What we changed or rejected
-
-We did not allow the AI to independently define the final product architecture. The team selected and refined the components according to the hackathon problem statement and prototype scope.
-
----
-
-## Prompt 2 — AI Contextual Re-Theming
-
-> "Re-theme this educational question around the student's selected interest while preserving the numerical values, formula, answer, learning objective and difficulty."
-
-### What we kept
-
-* Interest-based personalization
-* Contextual examples
-* Narrative adaptation
-
-### What we changed or rejected
-
-We rejected any approach where the AI could modify:
-
-* Correct answers
-* Numerical values
-* Mathematical relationships
-* Learning objectives
-* Difficulty
-
-Academic correctness remains deterministic.
-
----
-
-## Prompt 3 — Prerequisite Knowledge Graph
-
-> "Create a prerequisite-based learning path where students must demonstrate sufficient mastery of prerequisite concepts before progressing to dependent concepts."
-
-### What we kept
-
-* Concept graph
-* Prerequisite relationships
-* Mastery-based gating
-* Locked/unlocked learning states
-* Remediation recommendations
-
-### What we changed or rejected
-
-We kept the actual progression rules deterministic instead of allowing an LLM to decide whether a student should unlock a concept.
-
----
-
-## Prompt 4 — Struggle Detection
-
-> "Design a transparent struggle detection model using repeated mistakes, low accuracy, excessive time, prerequisite weakness and hint dependency."
-
-### What we kept
-
-* Multiple behavioral signals
-* Transparent scoring
-* Risk levels
-* Actionable intervention recommendations
-
-### What we changed or rejected
-
-We did not make the system depend on an opaque AI prediction for basic intervention decisions.
-
-The scoring logic remains understandable and inspectable.
-
----
-
-## Prompt 5 — Facilitator Intervention
-
-> "When a student is struggling, provide a teacher with the reason for the struggle and a concrete recommended action rather than only showing a low score."
-
-### What we kept
-
-* Intervention queue
-* Student risk information
-* Reason for risk
-* Recommended action
-* Facilitator-controlled intervention
-
-### What we changed or rejected
-
-We rejected the idea of automatically taking consequential actions without facilitator involvement.
-
-The AI recommends.
-
-The facilitator decides.
-
----
-
-# 5. How We Verified AI Output
-
-The team used multiple levels of verification.
-
-### 1. Functional Testing
-
-AI-assisted code was integrated into the application and tested through the actual student and facilitator workflows.
-
-### 2. Manual Code Review
-
-Generated code was reviewed by the team before being accepted into the project.
-
-### 3. Integration Testing
-
-AI-assisted components were tested together with:
-
-* Authentication
-* Supabase
-* API routes
-* Student dashboard
-* Facilitator dashboard
-* Mastery logic
-* Learning flow
-
-### 4. Academic Validation
-
-For AI-generated educational content, the team checks that important academic information remains unchanged.
-
-Particularly:
-
-* Numbers
-* Formula
-* Answer
-* Learning objective
-* Topic
-* Difficulty
-
-### 5. Deterministic Fallback
-
-Where AI-generated output cannot be trusted or the API is unavailable, the application can fall back to predefined educational content.
-
-### 6. Human Review
-
-The facilitator remains part of the intervention process.
-
-The system is designed around:
-
-```text
-AI detects
-    ↓
-AI explains
-    ↓
-AI recommends
-    ↓
-Human reviews
-    ↓
-Human decides
-```
-
----
-
-## Example of a Potential AI Failure
-
-A generative model could theoretically change a numerical value while re-writing a question.
-
-For example:
-
-```text
-Original:
-12V / 6Ω = 2A
-```
-
-If a generated question accidentally changed the values:
-
-```text
-24V / 6Ω = 4A
-```
-
-the generated content would no longer represent the same academic problem.
-
-AURA therefore treats the original structured educational data as authoritative and uses validation/fallback behavior rather than blindly trusting generated text.
-
----
-
-# 6. What We Deliberately Did Not Use AI For
-
-The following areas were intentionally kept outside autonomous LLM decision-making:
-
-* Prerequisite graph authority
-* Mastery thresholds
-* Topic unlocking
-* Core progression rules
-* Authentication
-* Authorization
-* Database integrity
-* Intervention state management
-* Academic answer validation
-* Final facilitator decisions
-
-The team also did not use AI as a substitute for understanding the submitted code.
-
-Every team member is expected to understand the AI-assisted code relevant to their contribution.
+outside autonomous LLM control.
 
 ---
 
 # 7. AI vs Deterministic Logic
 
-A key architectural decision in AURA Learn is separating **generative personalization** from **learning-system authority**.
-
-| Function                |  AI | Deterministic Logic |
-| ----------------------- | :-: | :-----------------: |
-| Contextual re-theming   |  ✓  |     ✓ Validation    |
-| Personalized examples   |  ✓  |    ✓ Constraints    |
-| Educational explanation |  ✓  |      ✓ Fallback     |
-| Prerequisite graph      |     |          ✓          |
-| Mastery calculation     |     |          ✓          |
-| Topic unlocking         |     |          ✓          |
-| Difficulty state        |     |          ✓          |
-| Struggle score          |     |          ✓          |
-| Intervention status     |     |          ✓          |
-| Facilitator decision    |     |          ✓          |
-| Authentication          |     |          ✓          |
-| Database integrity      |     |          ✓          |
-
-This architecture prevents the LLM from becoming the single point of failure for the learning system.
-
----
-
-# 8. Our Use of AI During Development
-
-AI significantly accelerated development, especially for:
-
-* Boilerplate generation
-* UI scaffolding
-* Debugging
-* Refactoring
-* Documentation
-* API implementation
-* Database integration
-* Understanding errors
-* Exploring implementation alternatives
-* Generating development prompts
-* Code review assistance
-
-However, the team remained responsible for:
-
-* Requirements
-* Product architecture
-* Feature prioritization
-* Integration
-* Testing
-* Debugging
-* Security decisions
-* Academic correctness
-* Final implementation
-
-AI-generated code was treated as **suggested implementation**, not automatically trusted code.
+| Function | KEA AI | AURA AI | Deterministic authority |
+|---|:---:|:---:|:---:|
+| Topic understanding | ✓ | — | Validation |
+| Concept generation | ✓ | — | Validation |
+| Explanations | ✓ | ✓ | Fallback / constraints |
+| Personalized examples | ✓ | ✓ | Constraints |
+| Contextual re-theming | ✓ | ✓ | Academic validation |
+| Semantic evaluation | ✓ | ✓ where configured | Validation rules |
+| Prerequisite graph authority |  |  | ✓ |
+| Mastery calculation |  |  | ✓ |
+| Topic unlocking |  |  | ✓ |
+| Core progression |  |  | ✓ |
+| Difficulty-state authority |  |  | ✓ |
+| Struggle state |  |  | ✓ |
+| Intervention state |  |  | ✓ |
+| Authentication |  |  | ✓ |
+| Authorization |  |  | ✓ |
+| Database integrity |  |  | ✓ |
+| Final facilitator decision |  |  | ✓ |
 
 ---
 
-# 9. AI Development Workflow
+# 8. Academic Safety / Guardrails
+
+Generated educational content must not silently change the authoritative learning problem.
+
+Where re-theming or generation is applied, the system should preserve the relevant educational invariants.
+
+Examples:
+
+- Numerical values
+- Variables
+- Formulas
+- Expected answer
+- Learning objective
+- Topic / concept
+- Difficulty
+- Required reasoning
+
+Conceptually:
+
+```text
+Authoritative educational content
+              ↓
+         AI generation
+              ↓
+         Validation
+              ↓
+        ┌─────┴─────┐
+        │           │
+      VALID       INVALID
+        │           │
+        ↓           ↓
+      Show       Fallback
+      content    to original
+```
+
+This is especially important in AURA Learn, where AI contextualization is intended to change **how the problem is presented**, not what the correct academic problem is.
+
+KEA uses a similar boundary: AI can generate useful learning content, but deterministic engines remain responsible for graph validity, progression, mastery, answer integrity, and domain-specific checks.
+
+---
+
+# 9. What Happens When AI Is Wrong?
+
+A generated response is not automatically authoritative.
+
+Potential failure modes include:
+
+- incorrect generated explanation
+- altered numerical values
+- incorrect formula
+- incorrect answer
+- malformed structured output
+- provider timeout
+- provider authentication failure
+- rate limiting
+- network failure
+
+The intended response is:
+
+```text
+AI request
+   ↓
+Generated output
+   ↓
+Validation
+   ↓
+Valid?
+ ┌─┴─┐
+YES  NO
+ │    │
+ ↓    ↓
+Use  Fallback
+```
+
+The key principle:
+
+> **AI failure must not corrupt the authoritative learner state.**
+
+---
+
+# 10. Adaptivity: AI + Learner Evidence
+
+The adaptive loop does not rely on an LLM alone.
+
+```text
+Learner interaction
+        ↓
+Evidence
+        ↓
+Deterministic learning state
+        ↓
+Adaptive decision
+        ↓
+AI personalization where useful
+        ↓
+Next learning action
+```
+
+Examples of evidence include:
+
+- Diagnostic performance
+- Practice performance
+- Assessment performance
+- Oral/interview evidence
+- Prerequisite mastery
+- Recent performance
+- Misconceptions
+- Struggle signals
+- Pace / learning rhythm
+- Lab performance in AURA Learn
+
+The resulting learning action can include:
+
+```text
+Advance
+Scaffold
+Remediate prerequisite
+Generate extension
+Request further evidence
+Surface facilitator intervention
+```
+
+---
+
+# 11. AURA Learn Struggle + AI Loop
+
+AURA Learn can use signals such as:
+
+- Repeated incorrect answers
+- Low accuracy
+- Excessive time
+- Hint dependency
+- Topic revisits
+- Skipped questions
+- Prerequisite weakness
+
+Conceptual loop:
+
+```text
+Learning activity
+      ↓
+Learner response
+      ↓
+Struggle signals
+      ↓
+Adaptive decision
+      ↓
+AI-assisted explanation / re-theming
+      ↓
+Practice again
+      ↓
+Mastery update
+      ↓
+Facilitator intervention if required
+```
+
+The facilitator remains the final human decision-maker for intervention.
+
+---
+
+# 12. KEA Topic-to-Mastery AI Loop
+
+KEA's open-topic workflow is:
+
+```text
+"What do you want to learn?"
+          ↓
+AI topic understanding
+          ↓
+Concept + prerequisite candidates
+          ↓
+Schema / referential / DAG validation
+          ↓
+Diagnostic calibration
+          ↓
+Personalized path
+          ↓
+Interactive learning
+          ↓
+AI practice / assessment / oral support
+          ↓
+Deterministic mastery
+          ↓
+Remediation / advancement / intervention
+```
+
+The model is therefore used to help create and explain learning, while the learning engine governs progression.
+
+---
+
+# 13. AI-Assisted Development Workflow
 
 Our development workflow generally followed:
 
 ```text
-Problem / Requirement
+Problem / requirement
         ↓
-Team Discussion
+Team discussion
         ↓
-Architecture / Feature Decision
+Architecture decision
         ↓
-AI-Assisted Implementation
+AI-assisted implementation
         ↓
-Human Review
+Human review
         ↓
-Run / Test
+Run / test
         ↓
 Debug
         ↓
-Integrate
+Integration
         ↓
-Final Review
+Final verification
 ```
 
 For complex features:
@@ -571,120 +550,353 @@ Requirement
     ↓
 Prototype
     ↓
-AI Assistance
+AI assistance
     ↓
-Human Validation
+Human validation
     ↓
 Integration
     ↓
 Testing
 ```
 
----
-
-# 10. Transparency Statement
-
-We acknowledge that AI-assisted development was an important part of building AURA Learn.
-
-We do not claim that all source code was written manually without AI assistance.
-
-At the same time, we do not treat AI output as automatically correct.
-
-The team made the product decisions and reviewed, integrated, tested and modified AI-assisted implementations.
-
-The most important architectural principle was:
-
-> **Use AI to personalize learning, but do not allow AI to become the authority for academic correctness or student progression.**
+AI-generated code was treated as **suggested implementation**, not automatically trusted code.
 
 ---
 
-# 11. Team Understanding
+# 14. Verification of AI-Assisted Code
 
-Every team member participating in the submission is expected to understand:
+The team used multiple forms of verification.
 
-* The purpose of the product
-* The overall architecture
-* Their contributed code
-* AI-assisted portions relevant to their contribution
-* The runtime AI workflow
-* The deterministic learning logic
-* The fallback behavior
-* The role of the facilitator
+### Static checks
 
-If reviewers ask why a particular AI-assisted implementation exists, the team should be able to explain:
+Where configured:
 
-1. What problem it solves
-2. How it works
-3. Why it was implemented that way
-4. What assumptions it makes
-5. What happens when it fails
+- TypeScript typecheck
+- ESLint
+- Production build
+- Unit/integration tests
+
+### Functional verification
+
+AI-assisted implementations were tested through the actual learning workflows, including:
+
+- Topic entry
+- Diagnostic calibration
+- Learning generation
+- Practice
+- Assessment
+- Mastery updates
+- Adaptive remediation
+- Interview/oral flows
+- Facilitator intervention
+
+### Security verification
+
+The team specifically protected:
+
+- Server-side secrets
+- Assessment answer authority
+- Interview transcript authority
+- Mastery state integrity
+- Client/server trust boundaries
+
+### Deterministic validation
+
+AI output is checked against schema, educational, domain, or application constraints before being treated as authoritative.
 
 ---
 
-# 12. Final AI Architecture
+# 15. Accuracy / Benchmark Disclosure
+
+We do **not** claim a formal statistical ML accuracy benchmark for the runtime generative AI layer.
+
+The runtime AI is primarily used for:
+
+- generation
+- personalization
+- contextual explanation
+- semantic assistance
+
+rather than as a conventional supervised classifier with a single accuracy metric.
+
+Instead, the MVP validates behavior through:
+
+- schema validation
+- deterministic rules
+- functional tests
+- domain invariants
+- fallback behavior
+- human review
+- end-to-end learning-flow tests
+
+No fabricated model-accuracy percentage is reported.
+
+---
+
+# 16. Offline / Degraded AI Behavior
+
+### KEA
+
+KEA has a multi-provider cascade and deterministic fallback where supported:
 
 ```text
-                         AURA LEARN
-                              │
-                    ┌─────────┴─────────┐
-                    │                   │
-              STUDENT DATA        CURRICULUM DATA
-                    │                   │
-                    └─────────┬─────────┘
-                              ↓
-                       MASTERY ENGINE
-                              │
-                              ↓
-                     ADAPTIVE LEARNING
-                              │
-                ┌─────────────┴─────────────┐
-                │                           │
-        DETERMINISTIC LOGIC            RUNTIME AI
-                │                           │
-        ┌───────┼────────┐          ┌───────┼────────┐
-        ↓       ↓        ↓          ↓       ↓        ↓
-   Prereq   Mastery  Difficulty  Theme   Example  Explain
-   Graph    Score     Control     Shift   Gen.     Content
-        │       │        │          │       │        │
-        └───────┴────────┴──────────┴───────┴────────┘
-                              │
-                              ↓
-                       LEARNING ACTIVITY
-                              │
-                              ↓
-                       STUDENT RESPONSE
-                              │
-                              ↓
-                       STRUGGLE ENGINE
-                              │
-                              ↓
-                    FACILITATOR INTERVENTION
-                              │
-                              ↓
-                       UPDATED MASTERY
-                              │
-                              ↺
+Groq
+ ↓
+NVIDIA NIM
+ ↓
+Gemini adapter
+ ↓
+Deterministic fallback
 ```
+
+The application should distinguish live AI generation from deterministic/demo fallback.
+
+### AURA Learn
+
+AURA Learn keeps core educational content and learning behavior separate from runtime AI.
+
+Where supported:
+
+```text
+Core educational content
+        ↓
+Continue learning
+
+Runtime AI unavailable
+        ↓
+Original / fallback content
+```
+
+External LLM generation requires network/provider availability.
+
+The product therefore does not make the external AI service the sole authority for core progression.
+
+---
+
+# 17. Student Data and AI Providers
+
+Only information required for the relevant AI-assisted operation should be sent to an external provider.
+
+For contextual generation, this can be limited to structured educational context such as:
+
+- Topic
+- Question / task
+- Learning objective
+- Difficulty
+- Selected interest / context
+- Relevant structured constraints
+
+Unnecessary personal information should not be sent merely to produce a learning explanation.
+
+Real provider credentials are stored in local environment files and are excluded from source control.
+
+---
+
+# 18. Cost Considerations
+
+A formal production cost benchmark has not been established.
+
+Runtime AI cost depends on:
+
+- Number of AI requests
+- Model/provider selected
+- Prompt size
+- Response size
+- Number of learners
+- Frequency of regeneration
+- Assessment/interview usage
+
+Potential production optimizations include:
+
+- Response caching
+- Reusing validated content
+- Reducing unnecessary AI calls
+- Smaller models for simpler tasks
+- Deterministic content for repeatable instruction
+- Calling AI only where personalization provides value
+- Provider-aware routing and rate limiting
+
+---
+
+# 19. Representative Prompts
+
+These are representative examples of the prompt patterns used to shape the AI components.
+
+## Topic Understanding
+
+> “Understand the learner's requested topic, identify concepts and prerequisites, and produce a structured learning path that can be validated as a dependency graph.”
+
+## Contextual Re-theming
+
+> “Re-theme the educational task around the learner's selected interest while preserving the numerical values, formula, expected answer, objective, concept, and difficulty.”
+
+## AI Learning Generation
+
+> “Generate a personalized lesson explanation, worked example, misconception warning, practice question, hint, and stretch challenge using the learner's current concept and recent learning evidence.”
+
+## Adaptive Remediation
+
+> “Generate targeted remediation for the identified prerequisite gap using the learner's recent mistake and current mastery state.”
+
+## Oral / Interview Assistance
+
+> “Evaluate the learner's response against the concept being assessed, identify the reasoning gap, and produce the next useful probe or feedback.”
+
+The prompt is not the final authority. The application validates the returned structured information and uses deterministic rules for critical learning state.
+
+---
+
+# 20. Why We Did Not Build a Fully Autonomous LLM Tutor
+
+A fully autonomous LLM tutor was considered as an architectural direction.
+
+We did not make it responsible for:
+
+- deciding mastery on its own
+- unlocking concepts on its own
+- bypassing prerequisites
+- determining critical progression without deterministic checks
+- replacing the facilitator
+- becoming the single point of failure for the learning system
+
+Reason:
+
+```text
+Predictability
+Auditability
+Academic correctness
+Security
+Resilience
+Human oversight
+```
+
+are more important than giving the model unrestricted control over learner state.
+
+---
+
+# 21. AI vs Product Identity
+
+The two MVPs use AI differently in their product experiences.
+
+### KEA
+
+```text
+Structured
+   ↓
+AI topic understanding
+   ↓
+Knowledge graph
+   ↓
+Deterministic mastery
+   ↓
+Adaptive route
+```
+
+KEA emphasizes **structure, standardization, graph-driven progression, and mastery governance**.
+
+### AURA Learn
+
+```text
+Interactive
+   ↓
+Learner interests
+   ↓
+Adaptive learning
+   ↓
+AI contextual assistance
+   ↓
+Virtual labs / interactive experiences
+   ↓
+Facilitator intervention
+```
+
+AURA Learn emphasizes **interactive engagement and contextual personalization**.
+
+The two applications are intentionally independent.
+
+---
+
+# 22. Launcher
+
+The Bug Busters launcher contains **no learning AI logic**.
+
+Its role is only:
+
+```text
+Bug Busters Launcher
+        ↓
+Choose MVP
+   ↙          ↘
+KEA          AURA Learn
+```
+
+It does not merge:
+
+- AI providers
+- learner state
+- APIs
+- components
+- databases
+- learning engines
+
+The launcher is simply the unified entry point.
+
+---
+
+# 23. Development Transparency
+
+We acknowledge that AI-assisted development was a significant part of building the project.
+
+We do not claim all code was manually written without AI assistance.
+
+At the same time, the team does not treat AI output as inherently correct.
+
+The final implementation reflects:
+
+- team-selected requirements
+- architectural decisions
+- AI-assisted implementation
+- human review
+- testing
+- debugging
+- integration
+- validation
+
+The guiding principle is:
+
+> **Use AI to accelerate and personalize learning, but never make AI the unchecked authority for academic correctness or learner progression.**
+
+---
+
+# 24. Team Understanding
+
+Every team member should be able to explain the AI-assisted portions relevant to their contribution, including:
+
+1. What the feature does
+2. Why AI is used there
+3. What inputs are provided
+4. What the model returns
+5. How the application validates the output
+6. What happens if the model fails
+7. What remains deterministic
+8. How the feature affects the learner journey
 
 ---
 
 # Declaration
 
-We confirm that this disclosure represents the team's use of AI-assisted development and runtime AI functionality for AURA Learn.
+We confirm that this document represents the team's use of AI-assisted development and runtime AI functionality for **Bug Busters — HM26-1E71**.
 
-AI tools were used to accelerate development, debugging, documentation, implementation and experimentation.
+AI was used to accelerate development, implementation, debugging, documentation, experimentation, and product workflows.
 
-The team remains responsible for the final submitted code and can explain the AI-assisted portions relevant to the project.
+The team remains responsible for the final submitted code, architecture, testing, integration, and validation.
 
-**Signed:** `Varun P` on behalf of **Bug Busters**
+**Primary architectural principle:**
 
-**Team ID:** `HM26-1E71`
+> **AI generates and assists. Deterministic learning systems govern. Humans intervene when needed.**
 
-**College:** `Maharaja Institute of Technology Mysore`
-
-**HackMysuru 1.0**
-
+**Team:** Bug Busters  
+**Team ID:** HM26-1E71  
+**College:** Maharaja Institute of Technology Mysore  
+**HackMysuru 1.0**  
 **Problem 01 — Adaptive Learning & Real-Time Intervention Platform**
-
-```
-```
