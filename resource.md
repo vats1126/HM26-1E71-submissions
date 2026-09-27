@@ -84,7 +84,7 @@ AURA Learn addresses the problem that students learn at different speeds and oft
 | # | Artifact                                                                              | Google Drive Link                                                                    | File Name                    | SHA-256 (first 16 chars) |
 | - | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ | ---------------------------- | ------------------------ |
 | 1 | [Pitch + Code Walkthrough Video](./resource-templates/video-guide.md) (≤ 10 min, MP4) | `https://drive.google.com/file/d/1HumxC8fk8K-4Qp_N2Bmoku-8l4hBD0NA/view?usp=sharing` | `HM26-1E71_video.mp4`        | `6e9f2d3caa7e5826`       |
-| 2 | [Decision Log](./resource-templates/decision-log-template.md) (1 page, PDF)           | `https://drive.google.com/file/d/1cUwGwFHDXj768JwydzTUckeXcGAiZAg6/view?usp=sharing` | `HM26-1E71_decision-log.pdf` | `0d66b58f6b79075e`       |
+| 2 | [Decision Log](./resource-templates/decision-log-template.md) (1 page, PDF)           | `https://drive.google.com/file/d/1MDi1ZIPhkfjqAvhEbPzy5XwSs5FVO9l4/view?usp=drive_link` | `HM26-1E71_decision-log.pdf` | `0d66b58f6b79075e`       |
 | 3 | [Presentation](./resource-templates/presentation-template.md) (≤ 10 slides, PDF)      | `https://docs.google.com/presentation/d/1aRA1lhd1HYL8aMpBU9cYJSX3kfYV3API/edit?usp=sharing&ouid=103593359005141101155&rtpof=true&sd=true` | `HM26-1E71_presentation.pdf` | `dc9e4072f3ca79ab`       |
 
 ---
